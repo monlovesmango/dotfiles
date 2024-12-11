@@ -10,6 +10,10 @@ return {
     config = function()
       require("mason-lspconfig").setup({
         ensure_installed = { "lua_ls" }
+        --[[
+          independentaly installed
+          - bashls
+        --]]
       })
     end
   },
@@ -18,6 +22,7 @@ return {
     config = function()
       local lspconfig = require("lspconfig")
       lspconfig.lua_ls.setup({})
+      lspconfig.bashls.setup({})
       vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
     end
   }
