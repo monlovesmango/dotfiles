@@ -74,7 +74,7 @@ crust = "#11111b"
 
 
 [directory]
-style = "teal"
+style = "green"
 
 [character]
 success_symbol = "[❯](purple)"
