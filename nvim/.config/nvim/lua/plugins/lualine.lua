@@ -52,8 +52,8 @@ local theme = {
     c = { fg = colors.bg, bg = colors.magenta },
   },
   inactive = {
-    b = { fg = colors.bg, guibg = 'none' },
-    a = { fg = colors.white, guibg = 'none' },
+    b = { fg = colors.white, bg = colors.steel_grey },
+    a = { fg = colors.white, bg = colors.steel_grey },
   },
   replace = {
     b = { fg = colors.yellow, bg = colors.steel_grey },
