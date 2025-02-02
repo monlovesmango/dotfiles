@@ -1,4 +1,3 @@
--- tokyonight theme colors https://github.com/folke/tokyonight.nvim/blob/main/lua/tokyonight/colors/moon.lua
 local colors = {
   bg = '#222436',
   bg_dark = '#1e2030',
@@ -45,30 +44,31 @@ local theme = {
   normal = {
     b = { fg = colors.white, bg = colors.grey },
     a = { fg = colors.white, bg = colors.bg_highlight },
-    c = { fg = colors.white, bg = colors.steel_grey },
+    c = { fg = colors.white, guibg = 'none' },
   },
   visual = {
-    b = { fg = colors.magenta, bg = colors.bg },
+    b = { fg = colors.magenta, bg = colors.grey },
     a = { fg = colors.bg, bg = colors.magenta, gui = 'bold' },
+    c = { fg = colors.bg, bg = colors.magenta },
   },
   inactive = {
-    b = { fg = colors.bg, bg = colors.blue },
-    a = { fg = colors.white, bg = colors.gray, gui = 'bold' },
+    b = { fg = colors.bg, guibg = 'none' },
+    a = { fg = colors.white, guibg = 'none' },
   },
   replace = {
-    b = { fg = colors.red, bg = colors.bg },
-    a = { fg = colors.bg, bg = colors.red, gui = 'bold' },
-    c = { fg = colors.white, bg = colors.bg },
+    b = { fg = colors.yellow, bg = colors.grey },
+    a = { fg = colors.bg, bg = colors.yellow, gui = 'bold' },
+    c = { fg = colors.bg, bg = colors.yellow },
   },
   insert = {
-    b = { fg = colors.orange, bg = colors.bg },
+    b = { fg = colors.orange, bg = colors.grey },
     a = { fg = colors.bg, bg = colors.orange, gui = 'bold' },
-    c = { fg = colors.white, bg = colors.bg },
+    c = { fg = colors.bg, bg = colors.orange },
   },
   command = {
-    b = { fg = colors.teal, bg = colors.bg },
+    b = { fg = colors.teal, bg = colors.steel_grey },
     a = { fg = colors.bg, bg = colors.green2, gui = 'bold' },
-    c = { fg = colors.white, bg = colors.bg },
+    c = { fg = colors.bg, bg = colors.green2 },
   },
 }
 
