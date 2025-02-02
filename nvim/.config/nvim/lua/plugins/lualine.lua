@@ -42,12 +42,12 @@ local colors = {
 -- define custom theme
 local theme = {
   normal = {
-    b = { fg = colors.white, bg = colors.grey },
+    b = { fg = colors.white, bg = colors.steel_grey },
     a = { fg = colors.white, bg = colors.bg_highlight },
     c = { fg = colors.white, guibg = 'none' },
   },
   visual = {
-    b = { fg = colors.magenta, bg = colors.grey },
+    b = { fg = colors.magenta, bg = colors.steel_grey },
     a = { fg = colors.bg, bg = colors.magenta, gui = 'bold' },
     c = { fg = colors.bg, bg = colors.magenta },
   },
@@ -56,19 +56,19 @@ local theme = {
     a = { fg = colors.white, guibg = 'none' },
   },
   replace = {
-    b = { fg = colors.yellow, bg = colors.grey },
+    b = { fg = colors.yellow, bg = colors.steel_grey },
     a = { fg = colors.bg, bg = colors.yellow, gui = 'bold' },
     c = { fg = colors.bg, bg = colors.yellow },
   },
   insert = {
-    b = { fg = colors.orange, bg = colors.grey },
+    b = { fg = colors.orange, bg = colors.steel_grey },
     a = { fg = colors.bg, bg = colors.orange, gui = 'bold' },
     c = { fg = colors.bg, bg = colors.orange },
   },
   command = {
-    b = { fg = colors.teal, bg = colors.steel_grey },
-    a = { fg = colors.bg, bg = colors.green2, gui = 'bold' },
-    c = { fg = colors.bg, bg = colors.green2 },
+    b = { fg = colors.cyan, bg = colors.steel_grey },
+    a = { fg = colors.bg, bg = colors.cyan, gui = 'bold' },
+    c = { fg = colors.bg, bg = colors.cyan },
   },
 }
 
