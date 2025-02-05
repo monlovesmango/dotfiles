@@ -71,6 +71,14 @@ local theme = {
     c = { fg = colors.bg, bg = colors.cyan },
   },
 }
+local tabline = {
+  lualine_a = { 'buffers' },
+  lualine_b = {},
+  lualine_c = {},
+  lualine_x = {},
+  lualine_y = {},
+  lualine_z = { 'tabs' },
+}
 
 return {
   'nvim-lualine/lualine.nvim',
@@ -81,6 +89,7 @@ return {
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
       },
+      tabline = tabline,
     }
   end,
 }

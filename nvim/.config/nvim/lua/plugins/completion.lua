@@ -36,7 +36,27 @@ return {
     },
 
     -- experimental signature help support
-    signature = { enabled = true },
+    -- signature = { enabled = true, window = {
+    --   border = 'single',
+    -- } },
+
+    completion = {
+      list = {
+        selection = {
+          preselect = true,
+          auto_insert = true,
+        },
+      },
+      menu = {
+        auto_show = true,
+        border = 'rounded',
+      },
+      documentation = {
+        window = {
+          border = 'single',
+        },
+      },
+    },
   },
   opts_extend = { 'sources.default' },
 }

@@ -30,6 +30,17 @@ return {
     },
     opts = {
       servers = {
+        clangd = {
+          capabilities = {
+            offsetEncoding = { 'utf-8', 'utf-16' },
+            textDocument = {
+              completion = {
+                editsNearCursor = true,
+              },
+            },
+          },
+          filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda', 'proto' },
+        },
         lua_ls = {
           -- cmd = { ... },
           -- filetypes = { ... },

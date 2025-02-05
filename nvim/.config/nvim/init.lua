@@ -167,6 +167,10 @@ vim.keymap.set('v', '<leader>x', ':lua<cr>', { desc = 'e[x]ecute' })
 vim.keymap.set('n', '<M-n>', '<cmd>cnext<cr>')
 vim.keymap.set('n', '<M-p>', '<cmd>cprev<cr>')
 
+-- switch buffers
+vim.keymap.set('n', '<S-l>', '<cmd>bnext<cr>')
+vim.keymap.set('n', '<S-h>', '<cmd>bprevious<cr>')
+
 -- [[neo-tree]]
 vim.keymap.set('n', '<leader>fe', ':Neotree filesystem reveal toggle left<CR>', { desc = '[f]ile [e]xplorer' })
 vim.keymap.set('n', '<leader>be', ':Neotree buffers reveal toggle float<CR>', { desc = '[b]uffer [e]xplorer' })
