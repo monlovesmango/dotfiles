@@ -171,6 +171,20 @@ vim.keymap.set('n', '<M-p>', '<cmd>cprev<cr>')
 vim.keymap.set('n', '<S-l>', '<cmd>bnext<cr>')
 vim.keymap.set('n', '<S-h>', '<cmd>bprevious<cr>')
 
+-- resize window
+vim.keymap.set('n', '<C-Up>', '<cmd>resize +2<cr>', { desc = 'increase window height' })
+vim.keymap.set('n', '<C-Down>', '<cmd>resize -2<cr>', { desc = 'decrease window height' })
+vim.keymap.set('n', '<C-Left>', '<cmd>vertical resize -2<cr>', { desc = 'decrease window width' })
+vim.keymap.set('n', '<C-Right>', '<cmd>vertical resize +2<cr>', { desc = 'increase window width' })
+
+-- Move Lines
+vim.keymap.set('n', '<A-j>', "<cmd>execute 'move .+' . v:count1<cr>==", { desc = 'Move Down' })
+vim.keymap.set('n', '<A-k>', "<cmd>execute 'move .-' . (v:count1 + 1)<cr>==", { desc = 'Move Up' })
+vim.keymap.set('i', '<A-j>', '<esc><cmd>m .+1<cr>==gi', { desc = 'Move Down' })
+vim.keymap.set('i', '<A-k>', '<esc><cmd>m .-2<cr>==gi', { desc = 'Move Up' })
+vim.keymap.set('v', '<A-j>', ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc = 'Move Down' })
+vim.keymap.set('v', '<A-k>', ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = 'Move Up' })
+
 -- [[neo-tree]]
 vim.keymap.set('n', '<leader>fe', ':Neotree filesystem reveal toggle left<CR>', { desc = '[f]ile [e]xplorer' })
 vim.keymap.set('n', '<leader>be', ':Neotree buffers reveal toggle float<CR>', { desc = '[b]uffer [e]xplorer' })
@@ -218,6 +232,10 @@ end, { desc = '[S]earch [N]eovim files' })
 vim.keymap.set('n', '<leader>e', '<leader>fe', { desc = '[e]xplorer', remap = true })
 --vim.keymap.set('n', '<leader>f', '<leader>ff', { desc = '[f]ind f le', remap = true })
 vim.keymap.set('n', '<leader>/', '<leader>b/', { desc = '[/]search' })
+
+-- [[format]]
+local conform = require 'conform'
+vim.keymap.set('n', '<leader>bf', conform.format, { desc = '[b]uffer [f]ormat' })
 
 -- [[ Autocommands ]]
 --  See `:help lua-guide-autocommands`
