@@ -38,7 +38,6 @@ local colors = {
   steel_grey = '#4c566a',
   grey = '#3b4252',
 }
-
 -- define custom theme
 local theme = {
   normal = {
@@ -80,8 +79,47 @@ local tabline = {
   lualine_z = { 'tabs' },
 }
 
+local sections = {
+  lualine_a = {
+    {
+      function()
+        return 'RECORDING'
+      end,
+      cond = require('noice').api.status.mode.has,
+      color = { fg = colors.bg, bg = colors.red, gui = 'bold' },
+    },
+    {
+      'mode',
+    },
+  },
+  lualine_b = { 'branch', 'diff', 'diagnostics' },
+  lualine_c = { 'filename' },
+  lualine_x = { 'encoding', 'fileformat', 'filetype' },
+  lualine_y = { 'progress' },
+  lualine_z = {
+    { 'location' },
+    {
+      function()
+        return '●'
+      end,
+      cond = require('noice').api.status.mode.has,
+      color = { fg = colors.bg, bg = colors.red, gui = 'bold' },
+    },
+  },
+}
+
+local inactive_sections = {
+  lualine_a = {},
+  lualine_b = {},
+  lualine_c = { 'filename' },
+  lualine_x = { 'location' },
+  lualine_y = {},
+  lualine_z = {},
+}
+
 return {
   'nvim-lualine/lualine.nvim',
+  event = 'VeryLazy',
   config = function()
     require('lualine').setup {
       options = {
@@ -89,6 +127,8 @@ return {
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
       },
+      sections = sections,
+      inactive_sections = inactive_sections,
       tabline = tabline,
     }
   end,
