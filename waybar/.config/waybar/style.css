@@ -28,6 +28,7 @@ window#waybar {
     background: rgba(0,0,0, .4);
     border-radius: 8px;
     padding: 2px;
+    margin: 0 2px 2px 2px;
 }
 .modules-right {
     background: rgba(0,0,0, .6);
@@ -35,32 +36,34 @@ window#waybar {
     padding: 4px;
     margin: 0 2px 2px 2px;
 }
-.modules-left:hover,
-.modules-right:hover {
-    background: rgba(0,0,0, .8);
-}
 
 #workspaces button {
     color: @subtext0;
     padding: 2px;
+    border-radius: 8px;
+}
+
+#workspaces button.empty {
+    color: rgba(0,0,0,.4);
 }
 
 #workspaces button:hover {
     background: rgba(0, 0, 0, 0.3);
-    box-shadow: none;
-    border: none;
+    border: rgba(0, 0, 0, 0.3);
+    box-shadow: inherit;
+    text-shadow: inherit;
+    padding: 2px;
     outline: none;
-    border-radius: 8px;
+    color: @subtext0;
 }
 
-#workspaces button.focused {
+#workspaces button.visible {
     background: rgba(0, 0, 0, 0.5);
-    border-radius: 8px;
 }
 
 #workspaces button.active {
     background: rgba(0, 0, 0, 0.5);
-    border-radius: 8px;
+    color: @green;
 }
 
 #pulseaudio,

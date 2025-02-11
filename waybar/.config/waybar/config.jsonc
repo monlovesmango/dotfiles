@@ -45,5 +45,10 @@
   "memory": {
       "interval": 30,
       "format": " RAM: {used:0.1f}/{total:0.1f}GiB ({percentage}%)"
+  },
+  "hyprland/workspaces": {
+    "persistent-workspaces": {
+      "*": 3
+    }
   }
 }
