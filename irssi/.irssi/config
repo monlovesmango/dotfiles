@@ -154,11 +154,7 @@ channels = (
   },
   { name = "#bitcoin"; chatnet = "liberachat"; },
   { name = "#bitcoin-dev"; chatnet = "liberachat"; },
-  {
-    name = "#bitcoin-core-dev";
-    chatnet = "liberachat";
-    autojoin = "yes";
-  }
+  { name = "#bitcoin-core-dev"; chatnet = "LiberaChat"; }
 );
 
 aliases = {
