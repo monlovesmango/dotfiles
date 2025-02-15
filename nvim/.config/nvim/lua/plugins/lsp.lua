@@ -55,6 +55,21 @@ return {
             },
           },
         },
+        tailwindcss = {},
+        ts_ls = {
+          init_options = {
+            plugins = {
+              {
+                name = '@vue/typescript-plugin',
+                location = '/usr/lib/node_modules/@vue/typescript-plugin',
+                languages = { 'vue' },
+                configNamespace = 'typescript',
+              },
+            },
+          },
+          filetypes = { 'javascript', 'typescript', 'vue' },
+        },
+        volar = {},
       },
     },
     config = function(_, opts)
