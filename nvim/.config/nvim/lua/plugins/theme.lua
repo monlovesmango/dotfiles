@@ -21,10 +21,10 @@ return {
 
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
-      vim.api.nvim_set_hl(0, 'LineNrAbove', { fg = '#535d96' })
-      vim.api.nvim_set_hl(0, 'LineNr', { fg = '#535d96' })
-      vim.api.nvim_set_hl(0, 'LineNrBelow', { fg = '#535d96' })
-      vim.api.nvim_set_hl(0, 'DiagnosticUnnecessary', { fg = '#535d96' })
+      vim.api.nvim_set_hl(0, 'LineNrAbove', { fg = '#636da6' })
+      vim.api.nvim_set_hl(0, 'LineNr', { fg = '#636da6' })
+      vim.api.nvim_set_hl(0, 'LineNrBelow', { fg = '#636da6' })
+      vim.api.nvim_set_hl(0, 'DiagnosticUnnecessary', { fg = '#838db6' })
     end,
   },
   {
