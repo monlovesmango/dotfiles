@@ -189,6 +189,9 @@ vim.keymap.set('i', '<A-k>', '<esc><cmd>m .-2<cr>==gi', { desc = 'Move Up' })
 vim.keymap.set('v', '<A-j>', ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc = 'Move Down' })
 vim.keymap.set('v', '<A-k>', ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = 'Move Up' })
 
+-- delete buffer
+vim.keymap.set('n', '<leader>bd', '<cmd>bd<cr>', { desc = '[b]uffer [d]elete', remap = true })
+
 -- [[neo-tree]]
 vim.keymap.set('n', '<leader>fe', ':Neotree filesystem reveal toggle left<CR>', { desc = '[f]ile [e]xplorer' })
 vim.keymap.set('n', '<leader>be', ':Neotree buffers reveal toggle float<CR>', { desc = '[b]uffer [e]xplorer' })
@@ -196,18 +199,9 @@ vim.keymap.set('n', '<leader>be', ':Neotree buffers reveal toggle float<CR>', { 
 -- [[telescope]]
 -- See `:help telescope.builtin`
 local builtin = require 'telescope.builtin'
-vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
-vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
-vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[f]ile [f]inder' })
-vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
-vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
-vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>f/', builtin.live_grep, { desc = '[f]ile [/]search' })
-vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
-vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
-vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
-vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+vim.keymap.set('n', '<leader>bf', builtin.buffers, { desc = '[b]uffer [f]inder' })
 
 -- Slightly advanced example of overriding default behavior and theme
 vim.keymap.set('n', '<leader>b/', function()
@@ -218,19 +212,15 @@ vim.keymap.set('n', '<leader>b/', function()
   })
 end, { desc = '[b]uffer [/]search' })
 
--- It's also possible to pass additional configuration options.
---  See `:help telescope.builtin.live_grep()` for information about particular keys
-vim.keymap.set('n', '<leader>s/', function()
-  builtin.live_grep {
-    grep_open_files = true,
-    prompt_title = 'Live Grep in Open Files',
-  }
-end, { desc = '[S]earch [/] in Open Files' })
-
--- Shortcut for searching your Neovim configuration files
+vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[s]earch [h]elp' })
+vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[s]earch [k]eymaps' })
+vim.keymap.set('n', '<leader>st', builtin.builtin, { desc = '[s]earch [t]elescope' })
+vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[s]earch [w]ord' })
+vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[s]earch [d]iagnostics' })
+vim.keymap.set('n', '<leader>sr', builtin.oldfiles, { desc = '[s]earch [r]ecent' })
 vim.keymap.set('n', '<leader>sn', function()
   builtin.find_files { cwd = vim.fn.stdpath 'config' }
-end, { desc = '[S]earch [N]eovim files' })
+end, { desc = '[s]earch [n]eovim' })
 
 -- shortcut menu
 vim.keymap.set('n', '<leader>e', '<leader>fe', { desc = '[e]xplorer', remap = true })
@@ -239,7 +229,7 @@ vim.keymap.set('n', '<leader>/', '<leader>b/', { desc = '[/]search' })
 
 -- [[format]]
 local conform = require 'conform'
-vim.keymap.set('n', '<leader>bf', conform.format, { desc = '[b]uffer [f]ormat' })
+vim.keymap.set('n', '<leader>br', conform.format, { desc = '[b]uffer fo[r]mat' })
 
 -- [[ Autocommands ]]
 --  See `:help lua-guide-autocommands`
