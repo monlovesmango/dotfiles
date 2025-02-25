@@ -70,6 +70,8 @@ return {
           filetypes = { 'javascript', 'typescript', 'vue' },
         },
         volar = {},
+        rust_analyzer = {},
+        jsonls = {},
       },
     },
     config = function(_, opts)
