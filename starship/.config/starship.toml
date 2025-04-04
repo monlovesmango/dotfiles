@@ -1,14 +1,21 @@
+format = """
+$python\
+$git_state\
+$directory\
+$git_branch\
+$git_status
+$battery$character
+"""
 # Replace the "❯" symbol in the prompt with "➜"
 [character]      # The name of the module we are configuring is "character"
-#symbol = "➜"     # The "symbol" segment is being set to "➜"
 # use_symbol_for_status = true  # Show "✖" when the command failed
 
-[custom.shell]
-command = "echo $STARSHIP_SHELL"  # shows output of command
-when = """ test "$STARSHIP_SHELL" != "fish" """
-style = "dimmed blue"
-format = "[$output]($style)"
-shell =["bash"]
+# [custom.shell]
+# command = "echo $STARSHIP_SHELL"  # shows output of command
+# when = """ test "$STARSHIP_SHELL" != "fish" """
+# style = "dimmed blue"
+# format = "[$output]($style)"
+# shell =["bash"]
 
 # [custom.neovim]
 # command = 'bob ls | rg Used | awk "{print \$2}"'  # shows output of command
@@ -16,20 +23,23 @@ shell =["bash"]
 # style = "green"
 # format = "[ $output ]($style)"
 # shell =["bash"]
-
+[git_branch]
+symbol = " "
+format = 'on [$symbol$branch(:$remote_branch)]($style)'
 
 [git_status]
-untracked = '[ $count](bold yellow) '
-staged = '[ $count](bold green) '
-stashed = "[ ](cyan) "
-deleted = '[ $count](bold red) '
-modified= '[ $count](bold blue) '
-behind = '[ ](bold purple) '
-ahead = '[ ](bold purple) '
-format = '([$all_status$ahead_behind]($style))'
+untracked = '[?$count](bold red)'
+staged = '[+$count](bold green)'
+stashed = "[*](bold cyan)"
+deleted = '[-$count](bold red)'
+modified= '[!$count](bold red)'
+behind = '[](bold purple)'
+ahead = '[](bold purple)'
+style = ''
+format = '([\[$ahead_behind\] (\($stashed\))$conflicted$deleted$renamed$modified$typechanged$untracked(|$staged)]($style))'
 
 [[battery.display]]
-threshold = 50
+threshold = 35
 
 [lua]
 detect_folders = []
@@ -66,9 +76,6 @@ symbol = " "
 symbol = " "
 
 [fossil_branch]
-symbol = " "
-
-[git_branch]
 symbol = " "
 
 [golang]
@@ -159,6 +166,7 @@ symbol = "🪺 "
 
 [python]
 symbol = " "
+format = '[(\($virtualenv\) )]($style)'
 
 [rlang]
 symbol = "󰟔 "
