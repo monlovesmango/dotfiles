@@ -36,7 +36,7 @@ modified= '[!$count](bold red)'
 behind = '[](bold purple)'
 ahead = '[](bold purple)'
 style = ''
-format = '([\[$ahead_behind\] (\($stashed\))$conflicted$deleted$renamed$modified$typechanged$untracked(|$staged)]($style))'
+format = '([(\[$ahead_behind\]) (\($stashed\))(\[$conflicted$deleted$renamed$modified$typechanged$untracked\])(\[$staged\])]($style))'
 
 [[battery.display]]
 threshold = 35
