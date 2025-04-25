@@ -1,3 +1,4 @@
+-- define custom colors
 local colors = {
   bg = '#222436',
   bg_dark = '#1e2030',
@@ -38,6 +39,7 @@ local colors = {
   steel_grey = '#4c566a',
   grey = '#3b4252',
 }
+
 -- define custom theme
 local theme = {
   normal = {
@@ -70,6 +72,13 @@ local theme = {
     c = { fg = colors.bg, bg = colors.cyan },
   },
 }
+
+-- define custom functions
+local function get_total_lines()
+  return vim.fn.line '$'
+end
+
+-- define sections
 local tabline = {
   lualine_a = { 'buffers' },
   lualine_b = {},
@@ -93,11 +102,12 @@ local sections = {
     },
   },
   lualine_b = { 'branch', 'diff', 'diagnostics' },
-  lualine_c = { 'filename' },
+  lualine_c = { { 'filename', file_status = true, path = 1 } },
   lualine_x = { 'encoding', 'fileformat', 'filetype' },
   lualine_y = { 'progress' },
   lualine_z = {
-    { 'location' },
+    'location',
+    { get_total_lines, description = 'total lines' },
     {
       function()
         return '●'
@@ -111,7 +121,7 @@ local sections = {
 local inactive_sections = {
   lualine_a = {},
   lualine_b = {},
-  lualine_c = { 'filename' },
+  lualine_c = { { 'filename', file_status = true, path = 1 } },
   lualine_x = { 'location' },
   lualine_y = {},
   lualine_z = {},
