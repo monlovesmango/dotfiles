@@ -25,6 +25,11 @@ return {
       vim.api.nvim_set_hl(0, 'LineNr', { fg = '#636da6' })
       vim.api.nvim_set_hl(0, 'LineNrBelow', { fg = '#636da6' })
       vim.api.nvim_set_hl(0, 'DiagnosticUnnecessary', { fg = '#838db6' })
+      vim.api.nvim_set_hl(0, 'DiffAdd', { bg = '#243827' })
+      vim.api.nvim_set_hl(0, 'DiffDelete', { bg = '#362525' })
+      vim.api.nvim_set_hl(0, 'DiffChange', { bg = '#363325' })
+      vim.api.nvim_set_hl(0, 'DiffText', { bg = '#5E4E03' })
+      vim.api.nvim_set_hl(0, 'Comment', { fg = '#98A4E6' })
     end,
   },
   {

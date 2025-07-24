@@ -122,7 +122,7 @@ local inactive_sections = {
   lualine_a = {},
   lualine_b = {},
   lualine_c = { { 'filename', file_status = true, path = 1 } },
-  lualine_x = { 'location' },
+  lualine_x = { 'location', { get_total_lines, description = 'total lines' } },
   lualine_y = {},
   lualine_z = {},
 }
