@@ -231,8 +231,19 @@ vim.keymap.set('n', '<leader>/', '<leader>b/', { desc = '[/]search' })
 local conform = require 'conform'
 vim.keymap.set('n', '<leader>br', conform.format, { desc = '[b]uffer fo[r]mat' })
 
--- goto keymaps
+-- category keymaps
 vim.keymap.set('n', '<leader>g', function() end, { desc = '[g]oto' })
+vim.keymap.set('n', '<leader>b', function() end, { desc = '[b]uffer' })
+vim.keymap.set('n', '<leader>f', function() end, { desc = '[f]ile' })
+
+-- diff view keymaps
+-- vim.keymap.del('n', '<Space>d')
+vim.keymap.set('n', '<leader>d', function() end, { desc = '[d]iffview' })
+vim.keymap.set('n', '<leader>do', ':DiffviewOpen<cr>', { desc = '[d]iffview [o]pen' })
+vim.keymap.set('n', '<leader>dl', ':DiffviewFileHistory<cr>', { desc = '[d]iffview [l]og' })
+vim.keymap.set('n', '<leader>dc', ':DiffviewClose<cr>', { desc = '[d]iffview [c]lose' })
+vim.keymap.set('n', '<leader>dt', ':DiffviewToggleFiles<cr>', { desc = '[d]iffview [t]oggle files' })
+vim.keymap.set('n', '<leacer>dr', ':DiffviewRefresh<cr>', { desc = '[d]iffview [r]efresh' })
 
 -- [[ Autocommands ]]
 --  See `:help lua-guide-autocommands`
